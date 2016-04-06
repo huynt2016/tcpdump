@@ -1,9 +1,9 @@
 # tcpdump
-##I.Khái niệm
+##I. Khái niệm
 - Tcpdump là phần mềm bắt gói tin trong mạng, làm việc trên hầu hết các phiên bản hệ điều hành unix/linux.
 
-##II.Cấu trúc
-###1.Câu lệnh
+##II. Cấu trúc
+###1. Câu lệnh
 tcpdump [ -AbdDefhHIJKlLnNOpqStuUvxX# ] [ -B buffer_size ] [ -c count ] 
 
          [ -C file_size ] [ -G rotate_seconds ] [ -F file ] 
@@ -21,7 +21,7 @@ tcpdump [ -AbdDefhHIJKlLnNOpqStuUvxX# ] [ -B buffer_size ] [ -c count ]
          [ --time-stamp-precision=tstamp_precision ] 
          [ --immediate-mode ] [ --version ] 
          [ expression ] 
-###2.Một số tùy chọn
+###2. Một số tùy chọn
 | Tùy chọn | Mô tả |
 |----------|-------|
 | -A | Hiển thị các gói tin dưới dạng mã ACSII |
@@ -47,7 +47,7 @@ tcpdump [ -AbdDefhHIJKlLnNOpqStuUvxX# ] [ -B buffer_size ] [ -c count ]
 | -X | Hiển thị dữ liệu của gói tin dưới dạng mã Hex và ASCII |
 | -y | Lựa chọn datalinktype khi bắt các gói tin |
 
-##III.Một số bộ lọc cơ bản
+##III. Một số bộ lọc cơ bản
 - dst A: Khi sử dụng option này, tcpdump sẽ chỉ capture các gói tin có địa chỉ đích là “A”, có thể sử dụng kèm với từ khóa net để chỉ định một dãy mạng cụ thể. Ví dụ: tcpdump dst net 192.168.1.0/24.
 - Tương tự như option dst, nhưng thay vì capture các gói tin có địa chỉ đích cụ thể thì nó sẽ capture các gói tin có địa chỉ nguồn như quy định.
 - host A: Khi sử dụng option này, tcpdump sẽ chỉ capture các gói tin có địa chỉ nguồn hoặc địa chỉ đích là “A”.
@@ -65,3 +65,33 @@ tcpdump [ -AbdDefhHIJKlLnNOpqStuUvxX# ] [ -B buffer_size ] [ -c count ]
 - Ngoài ra để gom nhóm các điều kiện ta có thể dùng cặp từ khóa ‘’.  Ví dụ: tcpdump –i eth0 ‘dst host 192.168.1.1 or 192.168.1.10 or 192.168.1.11’
 
 ##V. Một số ví dụ
+###1. Bắt số lượng N gói tin từ một giao diện ethernet cụ thể
+
+<img src="http://i.imgur.com/FSzTeT4.png">
+
+###2. Hiển thị các gói tin được bắt trong hệ ASCII thông qua tcpdump -A
+
+<img src="http://i.imgur.com/l2INvED.png">
+
+###3. Bắt gói tin và ghi vào một file thông qua tcpdump -w
+
+<img src="http://i.imgur.com/voaSrJF.png">
+
+###4. Đọc các gói tin từ một file thông qua tcpdump -r
+
+<img src="http://i.imgur.com/Mdbi2Ph.png">
+
+###5. Chỉ nhận những gói tin trong với một kiểu giao thức cụ thể
+
+<img src="http://i.imgur.com/gupzz6D.png">
+
+###6. Nhận các gói tin trên một cổng cụ thể thông qua tcpdump port
+
+<img src="http://i.imgur.com/1jcEcSz.png">
+
+###7. *Lưu ý: Trong lệnh tcpdump bạn có thể kết hợp các tùy chọn và sử dụng điều kiện “and”, “or” hoặc “not” để lọc các gói tin.*
+
+##VI. Tham khảo
+- http://www.tcpdump.org/manpages/tcpdump.1.html#lbAD
+- http://www.thegeekstuff.com/2010/08/tcpdump-command-examples/
+- https://vinahost.vn/ac/knowledgebase/248/TCPDUMP-va-cac-th-thut-s-dng.html
